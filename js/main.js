@@ -10,18 +10,26 @@ var globals = {
 
   init : function(){
 
+    $('#ysfj_input+.ui-input-clear').click(function(){
+      $('#ysfj_result').html("");
+    });
+
     $('#ysfj_input').on('input',function(){
       try{
         var t_str = $('#ysfj_input').val();
         t_str = globals.ysfj(t_str);
         if(t_str !== null){
-          $('#ysfj_result').val(t_str);
+          $('#ysfj_result').html(t_str);
+        }else{
+          $('#ysfj_result').html("");
         }
-      }catch(e){}
+      }catch(e){
+        $('#ysfj_result').html("");
+      }
     });
 
     // disabled the result input instead jquery disabled to avoid opcity is 0.3
-    $('#ysfj_result').attr('disabled','disabled');
+    //$('#ysfj_result').attr('disabled','disabled');
   },
 
   ysfj : function(n){
