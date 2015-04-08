@@ -20,6 +20,8 @@ var globals = {
       }catch(e){}
     });
 
+    // disabled the result input instead jquery disabled to avoid opcity is 0.3
+    $('#ysfj_result').attr('disabled','disabled');
   },
 
   ysfj : function(n){
